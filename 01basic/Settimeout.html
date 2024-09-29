@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>chai aur code</h1>
+    <button id="stop">stop</button>
+  </body>
+  <script>
+    //setTimeout(handler,timevalue)
+    //means pass by reference ,func()also
+
+    // setTimeout(function(){
+    //   console.log("paras")
+    // },2000)
+
+    const say = function () {
+      console.log('paras');
+    };
+    setTimeout(say, 4000);
+    //say here is a reference
+
+    const text = function () {
+      document.querySelector('h1').innerHTML = 'best javascript manipulation';
+    };
+
+    const changeme = setTimeout(text, 4000);
+
+    document.querySelector('#stop').addEventListener('click', function () {
+      clearTimeout(changeme);
+      console.log('stopped me ');
+    });
+  </script>
+</html>

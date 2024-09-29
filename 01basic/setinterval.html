@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Interval Example</title>
+  </head>
+  <body>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+
+    <script>
+      const sayDate = function (str) {
+        console.log(str, Date.now());
+      };
+
+      let intervalid; // Variable to store the interval id
+      let isRunning = false; // Track if the interval is running
+
+      // Start the interval initially when the page loads
+      function startInterval() {
+        if (!isRunning) {
+          intervalid = setInterval(sayDate, 1000, 'hi'); // Log every second
+          isRunning = true; // Mark that the interval is running
+          console.log('Interval started/resumed.');
+        }
+      }
+
+      // Start the interval when the page loads
+      startInterval();
+
+      // Stop button functionality
+      document.querySelector('#stop').addEventListener('click', function () {
+        if (isRunning) {
+          clearInterval(intervalid); // Stop the interval
+          isRunning = false; // Mark that the interval is stopped
+          console.log('Interval stopped.');
+        }
+      });
+
+      // Start/Resume button functionality
+      document.querySelector('#start').addEventListener('click', function () {
+        startInterval(); // Restart the interval only if it was stopped
+      });
+    </script>
+  </body>
+</html>

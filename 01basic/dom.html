@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom manipulation </title>
+    <STYLE>
+        .bg-black{
+            color: white;
+            background-color: #212121;
+        }
+    </STYLE>
+</head>
+<body class="bg-black">
+    <div >
+        <h1 id="title" class="heading">dom learning on chai aur code <span>test text</span></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque accusantium ipsa repellat labore esse voluptatem placeat laborum, ex voluptas molestiae fugit temporibus. Excepturi dignissimos eligendi laudantium nemo ab at eveniet.</p>
+   
+        <ul class=" language">
+            <li class="list-item">one </li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+        </ul>
+
+    </div>
+    <div class="parent"> 
+         <div class="day">Monday</div> 
+         <div class="day">Tuesday</div> 
+         <div class="day">Wednesday</div>
+         <div class="day">Thursday</div> 
+    </div>
+</body>
+<script>
+// function addlang(name){
+//     const li=document.createElement('li');
+//     li.innerHTML=`${name};
+//     document.querySelector('.language').appendChild(li)
+
+// }
+// addlang("python")
+
+function optilang(name){
+const li=document.createElement('li');
+const text= document.createTextNode(name)
+li.appendChild(text)
+document.querySelector('.language').appendChild(li)
+}
+optilang('python')
+
+//edit
+
+const secondLang = document.querySelector("li:nth-child(2)") 
+//secondLang.innerHTML = "Mojo" 
+const newli = document.createElement('li') 
+newli.textContent = "Mojo" 
+secondLang.replaceWith(newli)
+</script>
+</html>
